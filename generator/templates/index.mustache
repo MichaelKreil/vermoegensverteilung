@@ -19,7 +19,15 @@
 
 	</head>
 	<body>
-
+		<div id="content">
+			<h1>Header</h1>
+			<div id="pagewrapper">
+				{{> 1_selbsteinschaetzung}}
+				{{> 2_grunddaten}}
+				{{> 3_analyse}}
+				{{> 4_vermoegenssteuer}}
+			</div>
+		</div>
 		<script src="assets/jquery/jquery-1.10.2{{#minified}}.min{{/minified}}.js"></script>
 		<script src="assets/bootstrap/js/bootstrap{{#minified}}.min{{/minified}}.js"></script>
 	</body>
