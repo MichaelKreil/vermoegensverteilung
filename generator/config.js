@@ -9,6 +9,6 @@ module.exports = {
 		'4_vermoegenssteuer'
 	],
 	phrases: {
-		title:{ de:'Vermögensverteilung' }
+		html_title:{ de:'Vermögensverteilung' }
 	}
 };
