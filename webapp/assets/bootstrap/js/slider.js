@@ -21,16 +21,18 @@
 
 	var Slider = function(element, options) {
 		this.element = $(element);
-		this.picker = $('<div class="slider">'+
-							'<div class="slider-track">'+
-								'<div class="slider-selection"></div>'+
-								'<div class="slider-handle"></div>'+
-								'<div class="slider-handle"></div>'+
-							'</div>'+
-							'<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'+
-						'</div>')
-							.insertBefore(this.element)
-							.append(this.element);
+		this.picker = $(
+			'<div class="slider">'+
+				'<div class="slider-track">'+
+					'<div class="slider-selection"></div>'+
+					'<div class="slider-handle"></div>'+
+					'<div class="slider-handle"></div>'+
+				'</div>'+
+				'<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'+
+			'</div>'
+		);
+		this.picker.insertBefore(this.element);
+
 		this.id = this.element.data('slider-id')||options.id;
 		if (this.id) {
 			this.picker[0].id = this.id;
@@ -62,9 +64,11 @@
 				this.stylePos = 'left';
 				this.mousePos = 'pageX';
 				this.sizePos = 'offsetWidth';
-				this.tooltip.addClass('top')[0].style.top = -this.tooltip.outerHeight() - 14 + 'px';
+				this.tooltip.addClass('top')[0].style.top = -this.tooltip.outerHeight() - 10 + 'px';
 				break;
 		}
+
+		this.picker.append(this.element);
 
 		this.min = this.element.data('slider-min')||options.min;
 		this.max = this.element.data('slider-max')||options.max;

@@ -1,3 +1,27 @@
+.slider-legend {
+	position: relative;
+	height: 50px;
+}
+
+.slider-legend div {
+	position: absolute;
+	width: 20%;
+	height: 20px;
+	text-align: center;
+}
+
+.slider {
+	left: 10%;
+}
+
+.slider .tooltip .tooltip-arrow {
+	border-top-color: #0480be;
+}
+
+.slider .tooltip-inner {
+	background-color: #0480be;
+}
+
 input.number {
 	text-align: right;
 }
@@ -10,3 +34,4 @@ label .help-block {
 	font-weight: normal;
 	margin: 0;
 }
+
