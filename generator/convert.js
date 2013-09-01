@@ -5,7 +5,7 @@ var fs = require('fs');
 var mustache = require('mustache');
 var config = require('./config.js');
 
-var template = fs.readFileSync('templates/index.mustache', 'utf8');
+var template = fs.readFileSync('./templates/index.mustache', 'utf8');
 var partials = {};
 
 config.partials.forEach(function (partial) {
