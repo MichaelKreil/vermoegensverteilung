@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<title>{{html_title}}</title>
@@ -20,13 +20,13 @@
 
 	</head>
 	<body>
-		<div id="content">
+		<div id="content" class="container">
 			<h1>Header</h1>
 			<div id="pagewrapper">
-				{{> a_selbsteinschaetzung}}
-				{{> b_grunddaten}}
-				{{> c_analyse}}
-				{{> d_vermoegenssteuer}}
+				<div id="page_a">{{> a_selbsteinschaetzung}}</div>
+				<div id="page_b">{{> b_grunddaten}}</div>
+				<div id="page_c">{{> c_analyse}}</div>
+				<div id="page_d">{{> d_vermoegenssteuer}}</div>
 			</div>
 		</div>
 		<script src="assets/jquery/jquery-1.10.2{{#minified}}.min{{/minified}}.js"></script>

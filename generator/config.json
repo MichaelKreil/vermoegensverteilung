@@ -27,20 +27,116 @@
 		}
 	},
 	"phrases": {
-		"html_title":{ "de":"Vermögensverteilung" },
-		"a_header":{ "de":"Wie schätzen Sie sich ein?"},
-		"b_header":{ "de":"Wie hoch ist Ihr Vermögen?"},
-		"c_header":{ "de":"So stehen sie da?"},
-		"d_header":{ "de":"Gewinnen sie bei einer Vermögenssteuer?" },
-		"persons_in_our_household":{ "de":"Wie viele Personen leben in Ihrem Haushalt?"},
-		"key":{ "de":""},
-		"key":{ "de":""},
-		"key":{ "de":""},
-		"key":{ "de":""},
-		"key":{ "de":""},
-		"key":{ "de":""},
-		"key":{ "de":""},
-		"key":{ "de":""},
-		"key":{ "de":""}
+		"html_title": {
+			"de": "Vermögensverteilung"
+		},
+		"a_header": {
+			"de": "Wie schätzen Sie sich ein?"
+		},
+		"b_header": {
+			"de": "Wie hoch ist Ihr Vermögen?"
+		},
+		"c_header": {
+			"de": "So stehen sie da!"
+		},
+		"d_header": {
+			"de": "Gewinnen sie bei einer Vermögenssteuer?"
+		},
+		"persons_in_your_household": {
+			"de": "Wie viele Personen leben in Ihrem Haushalt?"
+		},
+		"house_or_apartment": {
+			"de": "Haben Sie ein Haus oder eine Eigentumswohnung?"
+		},
+		"rented_apartment": {
+			"de": "Mietwohnung"
+		},
+		"owned_apartment": {
+			"de": "Eigentumswohnung"
+		},
+		"owned_house": {
+			"de": "Haus"
+		},
+		"cars_in_your_household": {
+			"de": "Wie viele Autos gibt es in Ihrem Haushalt?"
+		},
+		"financial_assets": {
+			"de": "Wie hoch ist Ihr finanzielles Vermögen?<span class='help-block'>z.B. auf dem Konto oder in Versicherungen, Aktien, usw.<span>"
+		},
+		"financial_debts": {
+			"de": "Wie hoch sind Ihre Schulden?<span class='help-block'>z.B. auf dem Konto oder in Versicherungen, Aktien, usw.</span>"
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		},
+		"key": {
+			"de": ""
+		}
 	}
 }

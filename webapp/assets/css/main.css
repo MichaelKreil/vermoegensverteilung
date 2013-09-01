@@ -1,0 +1,12 @@
+label.number {
+	text-align: right;
+}
+
+.form-horizontal label.control-label {
+	padding-top: 0;
+}
+
+label .help-block {
+	font-weight: normal;
+	margin: 0;
+}
