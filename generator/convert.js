@@ -19,6 +19,9 @@ if (watch) {
 	fs.watch('./templates', function (event, filename) {
 		generateAll();
 	});
+	fs.watch('./config.json', function (event, filename) {
+		generateAll();
+	});
 }
 
 function generateAll() {
