@@ -27,21 +27,25 @@ if (watch) {
 function generateAll() {
 	var config = JSON.parse(fs.readFileSync('./config.json'));
 	var template = fs.readFileSync('./templates/index.mustache', 'utf8');
-	var partials = {};
 
+	var partials = {};
 	config.partials.forEach(function (partial) {
 		partials[partial] = fs.readFileSync('./templates/'+partial+'.mustache', 'utf8');
 	});
 
-	generate('de', 'index.html');
+	generate('de',    'index_de.html');
+	generate('de,at', 'index_at.html');
 
 	function generate(language, filename) {
 		console.log('generating: '+filename);
 
 		var parameters = config.main;
+		parameters.phrases = {};
+		language.split(',').forEach(function (code) {
+			Object.keys(config.phrases).forEach(function (key) {
+				if (config.phrases[key][code]) parameters.phrases[key] = config.phrases[key][code];
+			});
 
-		Object.keys(config.phrases).forEach(function (key) {
-			parameters[key] = config.phrases[key][language];
 		});
 
 		var html = mustache.render(template, parameters, partials);
