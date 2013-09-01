@@ -40,12 +40,22 @@ function generateAll() {
 		console.log('generating: '+filename);
 
 		var parameters = config.main;
+		parameters.values = {};
 		parameters.phrases = {};
+
 		language.split(',').forEach(function (code) {
 			Object.keys(config.phrases).forEach(function (key) {
 				if (config.phrases[key][code]) parameters.phrases[key] = config.phrases[key][code];
 			});
+			Object.keys(config.values).forEach(function (key) {
+				if (config.values[key][code]) parameters.values[key] = config.values[key][code];
+			});
+		});
 
+		Object.keys(parameters.values).forEach(function (key) {
+			if (typeof parameters.values[key] == 'string') {
+				parameters.values[key+'_'+parameters.values[key]] = true;
+			}
 		});
 
 		var html = mustache.render(template, parameters, partials);

@@ -8,6 +8,24 @@
 		"c_analyse",
 		"d_vermoegenssteuer"
 	],
+	"values": {
+		"default_persons_per_household": {
+			"de": 3
+		},
+		"default_house_or_apartment": {
+			"de": "no",
+			"at": "house"
+		},
+		"default_cars_per_household": {
+			"de": 1
+		},
+		"default_financial_assets": {
+			"de": 20000
+		},
+		"default_financial_debts": {
+			"de": 3000
+		}
+	},
 	"phrases": {
 		"html_title":{ "de":"Vermögensverteilung" },
 		"a_header":{ "de":"Wie schätzen Sie sich ein?"},
