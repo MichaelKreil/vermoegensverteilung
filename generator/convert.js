@@ -1,27 +1,48 @@
-#!/usr/bin/env node
+var watch = false;
 
-/* modules */
+var arguments = process.argv.slice(2);
+arguments.forEach(function (argument) {
+	switch (argument) {
+		case 'watch': watch = true; break;
+		default:
+			console.warn('Unknown Argument "'+argument+'"');
+	}
+})
+
 var fs = require('fs');
 var mustache = require('mustache');
-var config = require('./config.js');
 
-var template = fs.readFileSync('./templates/index.mustache', 'utf8');
-var partials = {};
 
-config.partials.forEach(function (partial) {
-	partials[partial] = fs.readFileSync('./templates/'+partial+'.mustache', 'utf8');
-});
+generateAll();
 
-generate('de', 'index.html');
+if (watch) {
+	fs.watch('./templates', function (event, filename) {
+		generateAll();
+	});
+}
 
-function generate(language, filename) {
-	var parameters = config.main;
+function generateAll() {
+	var config = JSON.parse(fs.readFileSync('./config.json'));
+	var template = fs.readFileSync('./templates/index.mustache', 'utf8');
+	var partials = {};
 
-	Object.keys(config.phrases).forEach(function (key) {
-		parameters[key] = config.phrases[key][language];
+	config.partials.forEach(function (partial) {
+		partials[partial] = fs.readFileSync('./templates/'+partial+'.mustache', 'utf8');
 	});
 
-	var html = mustache.render(template, parameters, partials);
+	generate('de', 'index.html');
 
-	fs.writeFileSync('../webapp/'+filename, html, 'utf8');	
+	function generate(language, filename) {
+		console.log('generating: '+filename);
+
+		var parameters = config.main;
+
+		Object.keys(config.phrases).forEach(function (key) {
+			parameters[key] = config.phrases[key][language];
+		});
+
+		var html = mustache.render(template, parameters, partials);
+
+		fs.writeFileSync('../webapp/'+filename, html, 'utf8');	
+	}
 }
