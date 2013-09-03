@@ -26,12 +26,36 @@ input.number {
 	text-align: right;
 }
 
-.form-horizontal label.control-label {
-	padding-top: 0;
-}
-
 label .help-block {
 	font-weight: normal;
 	margin: 0;
 }
 
+form.hierarchyform .sub label {
+	padding-top: 0px;
+}
+
+form.hierarchyform .sub label .help-block {
+	font-size: 12px;
+}
+
+form.hierarchyform .header label {
+	font-size: 18px;
+	padding-top: 4px;
+}
+
+div.chart {
+	position: relative;
+}
+
+div.chart div {
+	position: absolute;
+}
+
+div.chart div.selector {
+	background:none; 
+}
+
+div.chart div.selector:hover {
+	background:rgba(255,0,0,0.2);
+}

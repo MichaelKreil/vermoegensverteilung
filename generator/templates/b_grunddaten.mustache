@@ -1,52 +1,53 @@
-<h2>{{phrases.b_header}}</h2>
+<h2>Wie hoch ist Ihr Vermögen?</h2>
 <form class="form-horizontal" role="form">
 	<div class="form-group">
-		<label for="persons_per_household" class="col-sm-6 control-label">{{{phrases.persons_in_your_household}}}</label>
+		<label for="persons_per_household" class="col-sm-6 control-label">Wie viele Personen leben in Ihrem Haushalt?</label>
 		<div class="col-sm-6">
 			<input type="text" class="form-control number" id="persons_per_household" value="{{values.default_persons_per_household}}" style="width:100px">
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="col-sm-6 control-label">{{{phrases.house_or_apartment}}}</label>
+		<label class="col-sm-6 control-label">Haben Sie ein Haus oder eine Eigentumswohnung?</label>
 		<div class="col-sm-6">
 			<div class="radio">
 				<label>
 					<input type="radio" name="real_estate" id="real_estate_no" value="no" {{#values.default_house_or_apartment_no}}checked{{/values.default_house_or_apartment_no}}>
-					{{{phrases.rented_apartment}}}
+					{Mietwohnung}}}
 				</label>
 			</div>
 			<div class="radio">
 				<label>
 					<input type="radio" name="real_estate" id="real_estate_apart" value="apart" {{#values.default_house_or_apartment_apart}}checked{{/values.default_house_or_apartment_apart}}>
-					{{{phrases.owned_apartment}}}
+					{Eigentumswohnung}}}
 				</label>
 			</div>
 			<div class="radio">
 				<label>
 					<input type="radio" name="real_estate" id="real_estate_house" value="house" {{#values.default_house_or_apartment_house}}checked{{/values.default_house_or_apartment_house}}>
-					{{{phrases.owned_house}}}
+					{Haus}}}
 				</label>
 			</div>
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="cars_in_household" class="col-sm-6 control-label">{{{phrases.cars_in_your_household}}}</label>
+		<label for="cars_in_household" class="col-sm-6 control-label">Wie viele Autos gibt es in Ihrem Haushalt?</label>
 		<div class="col-sm-6">
 			<input type="text" class="form-control number" id="cars_in_household" value="{{values.default_cars_per_household}}" style="width:100px">
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="financial_assets" class="col-sm-6 control-label">{{{phrases.financial_assets}}}</label>
+		<label for="financial_assets" class="col-sm-6 control-label">Wie hoch ist Ihr finanzielles Vermögen?<span class='help-block'>z.B. auf dem Konto oder in Versicherungen, Aktien, usw.</span></label>
 		<div class="col-sm-6">
 			<input type="text" class="form-control number" id="financial_assets" value="{{values.default_financial_assets}}" style="width:100px">
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="financial_debts" class="col-sm-6 control-label">{{{phrases.financial_debts}}}</label>
+		<label for="financial_debts" class="col-sm-6 control-label">Wie hoch sind Ihre Schulden?<span class='help-block'>z.B. auf dem Konto oder in Versicherungen, Aktien, usw.</span></label>
 		<div class="col-sm-6">
 			<input type="text" class="form-control number" id="financial_debts" value="{{values.default_financial_debts}}" style="width:100px">
 		</div>
 	</div>
+
 	<div class="form-group">
 		<div class="col-sm-12 text-right">
 			<button type="button" class="btn btn-primary right">Weiter</button>
