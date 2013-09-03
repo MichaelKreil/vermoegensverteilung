@@ -3,6 +3,7 @@
 		"minified":false
 	},
 	"partials": [
+		"0_datendefinition",
 		"a_selbsteinschaetzung",
 		"b_grunddaten",
 		"c_analyse",
