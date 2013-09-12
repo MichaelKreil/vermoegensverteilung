@@ -68,15 +68,18 @@ function generateAll() {
 			var positiveHeight = max*height/(max - min)
 			var width = 99/98; 
 
+			var path = [];
 			data.forEach(function (value, index) {
 				var h = positiveHeight*value/max;
 				var x = 99*index/98+'%';
 				var y = value < 0 ? positiveHeight : positiveHeight-h; 
 				var w = width+'%';
-				var c = value < 0 ? '#f00' : '#000';
+				var c = value < 0 ? '#faa' : '#aaa';
 				svg.push('<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+Math.abs(h)+'" style="fill:'+c+';stroke:'+c+';stroke-width:0.1" />');
 				path.push(x+','+y);
 			});
+
+			svg.push('<polyline points="'+path.join(' ')+'" style="stroke:#000; stroke-width:3px"/>')
 
 			svg = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="'+height+'">'
 				+ svg.join('\n')
