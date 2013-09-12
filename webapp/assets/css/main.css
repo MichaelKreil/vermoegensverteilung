@@ -1,3 +1,23 @@
+
+#pagewrapper {
+  position: relative;
+}
+
+#pagewrapper .page {
+	display: block;
+	/*opacity: 0; 
+	height: 0;*/
+	overflow: hidden;
+	-webkit-transition: opacity 0.6s ease-out;
+	        transition: opacity 0.6s ease-out;
+}
+
+#pagewrapper .page.active {
+	opacity: 1;
+	height: auto;
+}
+
+
 .slider-legend {
 	position: relative;
 	height: 50px;

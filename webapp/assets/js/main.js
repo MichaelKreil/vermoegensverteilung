@@ -14,4 +14,12 @@ $(function () {
 			return '... zu den reichsten '+(101-value)+'%';
 		}
 	});
+
+	var pages = $('#pagewrapper .page');
+
+	$('.next').click(function () {
+		var activePage = pages.filter('.active');
+		activePage.removeClass('active');
+		activePage.next().addClass('active');
+	})
 })
