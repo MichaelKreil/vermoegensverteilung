@@ -61,15 +61,12 @@ function generateAll() {
 		parameters.charts = {};
 
 		function generateChart(data) {
-			var html = [];
+			var svg = [];
 			var height = 500;
 			var min = data[0];
 			var max = data[data.length-1];
 			var positiveHeight = max*height/(max - min)
 			var width = 99/98; 
-
-			html.push('<div style="left:0; top:0px; width:100%; height:'+positiveHeight+'px; background:rgba(0,0,0,0.1)"></div>');
-			html.push('<div style="left:0; top:'+positiveHeight+'px; width:100%; height:'+(height-positiveHeight)+'px; background:rgba(255,0,0,0.1)"></div>');
 
 			data.forEach(function (value, index) {
 				var h = positiveHeight*value/max;
@@ -77,16 +74,15 @@ function generateAll() {
 				var y = value < 0 ? positiveHeight : positiveHeight-h; 
 				var w = width+'%';
 				var c = value < 0 ? '#f00' : '#000';
-				html.push('<div style="left:'+x+'; top:0; width:'+w+'; height:'+height+'px;" class="selector" id="svg_bar_'+index+'">');
-				html.push('<div style="left:0; top:'+y+'px; width:100%; height:'+Math.abs(h)+'px; background:'+c+'" class="bar"></div>');
-				html.push('</div>');
+				svg.push('<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+Math.abs(h)+'" style="fill:'+c+';stroke:'+c+';stroke-width:0.1" />');
+				path.push(x+','+y);
 			});
 
-			html = '<div style="width:100%; height:'+height+'px" class="chart">'
-				+ html.join('\n')
-				+ '</div>';
+			svg = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="'+height+'">'
+				+ svg.join('\n')
+				+ '</svg>';
 
-			return html;
+			return svg;
 		}
 
 		parameters.charts.wealth_distribution = generateChart(parameters.values.wealth_distribution, 400);
